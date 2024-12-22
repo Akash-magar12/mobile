@@ -14,12 +14,12 @@ const ShowCart = () => {
       <Back />
       <div className="w-full my-4 ">
         <h2>Cart({cart.length})</h2>
-        <div className="w-full my-4  min-h-screen    flex gap-10">
+        <div className="w-full my-4  min-h-screen flex-col md:flex-row    flex gap-10">
           <div className="flex flex-col w-full gap-7 ">
             {cart.map((item) => (
               <div
                 key={item._id}
-                className="left gap-4 border-b border-white pb-10   lg:w-[65%] flex  "
+                className="left  border-b border-white pb-4 gap-3    w-full flex  "
               >
                 <div className="w-36 h-28 rounded overflow-hidden ">
                   <img
@@ -66,7 +66,7 @@ const ShowCart = () => {
               </div>
             ))}
           </div>
-          <div className="right  lg:w-[35%]  sticky top-5 self-start  ">
+          <div className="right   lg:w-[35%] w-full  sticky top-5 self-start  ">
             <h2>Order Summary</h2>
             <div className="lg:w-[25rem] flex flex-col gap-6 p-4 mt-4 rounded-xl bg-[#1F1F1F]">
               <div className="flex justify-between">

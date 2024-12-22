@@ -5,24 +5,41 @@ import { FaRegUser } from "react-icons/fa";
 import { Link } from "react-router";
 
 const PhoneLinks = () => {
-  const links = [
-    { name: "Home", icon: <AiOutlineHome />, path: "/" },
-    { name: "Login", icon: <FaRegUser />, path: "/login" },
-    { name: "Cart", icon: <BsCart3 />, path: "/cart" },
-    { name: "Menu", icon: <RiMenuLine />, path: "/menu" },
-  ];
   return (
-    <div className="fixed bg-[#121212]  z-[9999] flex md:hidden items-center justify-between w-full bottom-0  py-3 drop-shadow-2xl left-0 px-3 border-t border-gray-600 ">
-      {links.map((link, id) => (
-        <Link
-          to={link.path.toLowerCase()}
-          key={id}
-          className="flex flex-col text-zinc-400 gap-1 cursor-pointer items-center"
-        >
-          <span className="text-lg">{link.icon}</span>
-          <p className="text-sm">{link.name}</p>
-        </Link>
-      ))}
+    <div className="fixed bg-[#121212] z-[9999] flex md:hidden items-center justify-between w-full bottom-0 py-3 drop-shadow-2xl left-0 px-3 border-t border-gray-600">
+      <Link
+        to="/"
+        className="flex flex-col text-zinc-400 gap-1 cursor-pointer items-center"
+      >
+        <span className="text-lg">
+          <AiOutlineHome />
+        </span>
+        <p className="text-sm">Home</p>
+      </Link>
+      <Link
+        to="/login"
+        className="flex flex-col text-zinc-400 gap-1 cursor-pointer items-center"
+      >
+        <span className="text-lg">
+          <FaRegUser />
+        </span>
+        <p className="text-sm">Login</p>
+      </Link>
+      <Link
+        to="/cart"
+        className="flex flex-col text-zinc-400 gap-1 cursor-pointer items-center"
+      >
+        <span className="text-lg">
+          <BsCart3 />
+        </span>
+        <p className="text-sm">Cart</p>
+      </Link>
+      <p className="flex flex-col text-zinc-400 gap-1 cursor-pointer items-center">
+        <span className="text-lg">
+          <RiMenuLine />
+        </span>
+        <p className="text-sm">Menu</p>
+      </p>
     </div>
   );
 };
