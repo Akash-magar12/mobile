@@ -25,7 +25,7 @@ export const Context = ({ children }) => {
         return prev.map(
           (cartItem) =>
             cartItem._id === item._id
-              ? { ...cartItem, quantity: (cartItem.quantity || 0) + 1 } // Update the quantity
+              ? { ...cartItem, quantity: cartItem.quantity  + 1 } // Update the quantity
               : cartItem // Keep the other items unchanged
         );
       } else {
@@ -34,13 +34,12 @@ export const Context = ({ children }) => {
       }
     });
   };
-
   const handleIncre = (id) => {
     setCart((prev) => {
       return prev.map((item) => {
         if (id === item._id) {
           // Update the quantity of the item if the id matches
-          return { ...item, quantity: (item.quantity || 0) + 1 };
+          return { ...item, quantity: item.quantity + 1 };
         }
         return item; // Return unchanged item if id does not match
       });
@@ -54,10 +53,10 @@ export const Context = ({ children }) => {
           // Update the quantity of the item if the id matches
           return {
             ...item,
-            quantity: (item.quantity || 0) > 0 ? (item.quantity || 0) - 1 : 0,
+            quantity: item.quantity > 0 ? item.quantity - 1 : 0,
           };
         }
-        return item; // Return unchanged item if id does not match
+        return item;
       });
     });
   };
@@ -73,7 +72,7 @@ export const Context = ({ children }) => {
     try {
       const url = await fetch(endpoint);
       const response = await url.json();
-      setProducts(response); // Assuming the response matches Product[]
+      setProducts(response);
     } catch (error) {
       console.log("Error fetching data:", error);
     } finally {
@@ -82,7 +81,7 @@ export const Context = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchAllData(API_URL); // Fetch data on mount
+    fetchAllData(API_URL);
   }, []);
 
   return (
