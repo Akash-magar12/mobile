@@ -5,6 +5,7 @@ const Footer = () => {
       <div className="text-center">
         <p className="text-sm text-gray-600">
           © Copyright 2020 Lorem Inc. All rights reserved.
+          lorem*10
         </p>
       </div>
     </div>

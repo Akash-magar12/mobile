@@ -13,9 +13,14 @@ import LoginMain from "./Pages/LoginMain";
 import Calltoaction from "./Components/Calltoaction";
 import Footer from "./Pages/Footer";
 import PhoneLinks from "./Components/PhoneLinks";
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
+import { useEffect } from "react";
 
 const App = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div className="bg-[#121212] pb-20 overflow-x-hidden  lg:pb-2 px-3 md:px-6 lg:px-16 py-2 pt-4  text-white w-full min-h-screen">
       <Navbar />

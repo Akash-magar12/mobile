@@ -38,7 +38,6 @@ const PhoneLinks = () => {
         <span className="text-lg">
           <RiMenuLine />
         </span>
-        <p className="text-sm">Menu</p>
       </p>
     </div>
   );

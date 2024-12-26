@@ -2,19 +2,15 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
 
-// Define the context type
 export const Contexted = createContext(null);
 
-//
 
-// Create the Context provider
 export const Context = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [cart, setCart] = useState([]);
   const [query, setQuery] = useState("");
 
-  // handleAdd function will add items to the cart
   const handleAdd = (item) => {
     setCart((prev) => {
       // Check if item already exists in the cart
