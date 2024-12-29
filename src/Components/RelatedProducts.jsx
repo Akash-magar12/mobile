@@ -22,7 +22,6 @@ const RelatedProducts = ({ category }) => {
         setData(data);
       } catch (error) {
         console.log(error);
-        // Set loading to false if there's an error
       }
     }
   };
