@@ -6,6 +6,8 @@ import { Contexted } from "./Context";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from "react-router";
+import Comments from "./Comments";
+import RelatedProducts from "./RelatedProducts";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -13,6 +15,7 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(false);
   const { handleAdd } = useContext(Contexted);
   const API_URL = "https://jsonserver.reactbd.com/amazonpro";
+
   const notify = () =>
     toast.success("Product Added Successfully!", {
       position: "bottom-right",
@@ -49,7 +52,7 @@ const ProductDetail = () => {
           <MoonLoader color="white" />
         </div>
       ) : (
-        <div className=" md:my-10 my-6 w-full pb-16  ">
+        <div className=" md:my-10 my-6 w-full pb-10  ">
           <ToastContainer
             position="bottom-right"
             autoClose={1200}
@@ -104,7 +107,7 @@ const ProductDetail = () => {
                     notify();
                   }
                 }}
-                className="bg-white gap-4 text-sm flex items-center px-2 py-2 lg:px-4 lg:py-3 rounded text-black"
+                className="bg-white gap-4 mt-2 md:mt-0 text-sm flex items-center px-2 py-2 lg:px-4 lg:py-3 rounded text-black"
               >
                 <span className="text-md lg:text-xl">
                   <BsCart3 />
@@ -115,6 +118,8 @@ const ProductDetail = () => {
           </div>
         </div>
       )}
+      <Comments />
+      <RelatedProducts category={data?.category} />
     </>
   );
 };

@@ -31,6 +31,7 @@ const App = () => {
           element={
             <>
               <BestOffers />
+
               <Feature />
               <Arrival />
               <Calltoaction />

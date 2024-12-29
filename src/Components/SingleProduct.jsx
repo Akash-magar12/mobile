@@ -6,9 +6,8 @@ const SingleProduct = ({ data, loading }) => {
   return (
     <>
       {loading ? (
-        <div className="flex justify-center  items-center py-4">
+        <div className="flex justify-center   items-center py-4">
           <MoonLoader color="white" />
-          
         </div>
       ) : (
         <div className="flex gap-5 overflow-x-auto scroller">

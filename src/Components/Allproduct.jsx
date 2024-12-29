@@ -44,7 +44,7 @@ const Allproduct = () => {
       </div>
 
       {loading ? (
-        <div className="flex justify-center h-[65vh] items-center py-4">
+        <div className="flex justify-center h-[70vh] items-center py-4">
           <MoonLoader color="white" />
         </div>
       ) : (
