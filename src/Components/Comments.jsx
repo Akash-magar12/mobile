@@ -26,7 +26,7 @@ const Comments = () => {
       <div className="flex flex-col gap-3">
         {comments.map((c) => (
           <div key={c.id} className="flex gap-3 mt-5 ">
-            <span className="bg-[#1F2528] h-10 w-10 flex justify-center items-center rounded-full text-white text-lg font-medium">
+            <span className="bg-[#1F2528] aspect-square h-10 w-10 flex justify-center items-center rounded-full text-white text-lg font-medium">
               A
             </span>
             <div>

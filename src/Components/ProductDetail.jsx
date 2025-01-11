@@ -11,6 +11,8 @@ import RelatedProducts from "./RelatedProducts";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  console.log(id);
+  
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const { handleAdd } = useContext(Contexted);
